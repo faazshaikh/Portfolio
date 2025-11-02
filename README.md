@@ -8,7 +8,7 @@ A modern, responsive portfolio website built with React and Tailwind CSS.
 - **Responsive**: Works perfectly on desktop, tablet, and mobile devices
 - **Fast**: Built with Vite for optimal performance
 - **Sections**:
-  - Hero/Landing section
+  - Hero/Landing section with animations
   - About Me
   - Projects showcase
   - Work Experience
@@ -67,6 +67,10 @@ Portfolio/
 - Modify colors in `tailwind.config.js`
 - Add/remove projects in `Projects.jsx`
 - Customize sections as needed
+
+## 🚀 Deployment
+
+See `DEPLOYMENT.md` for detailed deployment instructions.
 
 ## 📄 License
 
