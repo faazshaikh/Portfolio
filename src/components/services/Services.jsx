@@ -2,11 +2,59 @@ import React, { useState } from "react";
 import "./services.css";
 
 const Services = () => {
-  const [toggleState, setToggleState] = useState(0);
+  const [activeModal, setActiveModal] = useState(null);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
+  const servicesData = [
+    {
+      id: 1,
+      title: "Full-Stack Development",
+      icon: "uil uil-web-grid",
+      description: "Building complete web applications with modern frameworks and technologies.",
+      items: [
+        "React-based frontend development with responsive UI/UX.",
+        "RESTful API development with FastAPI and Node.js.",
+        "Database design and management with MySQL, PostgreSQL, and SQLite.",
+        "User authentication and secure data handling.",
+        "Real-time data synchronization and state management.",
+      ],
+    },
+    {
+      id: 2,
+      title: "AI Integration & Automation",
+      icon: "uil uil-brain",
+      description: "Leveraging AI and cloud services to build intelligent, automated solutions.",
+      items: [
+        "Azure OpenAI integration for content generation.",
+        "Speech recognition and voice input validation.",
+        "Automated workflows and pipeline development.",
+        "Azure Cosmos DB for scalable data management.",
+        "Algorithm implementation for recommendation systems.",
+      ],
+    },
+    {
+      id: 3,
+      title: "Backend Architecture",
+      icon: "uil uil-server-network",
+      description: "Designing and implementing robust backend systems with scalable architecture.",
+      items: [
+        "RESTful API design and implementation.",
+        "Content management systems with hierarchical structures.",
+        "Enterprise authentication and authorization.",
+        "Data validation and security best practices.",
+        "Performance optimization and database indexing.",
+      ],
+    },
+  ];
+
+  const openModal = (id) => {
+    setActiveModal(id);
   };
+
+  const closeModal = () => {
+    setActiveModal(null);
+  };
+
+  const currentService = servicesData.find((service) => service.id === activeModal);
 
   return (
     <section className="services section" id="services">
@@ -14,213 +62,42 @@ const Services = () => {
       <span className="section__subtitle">What i offer</span>
 
       <div className="services__container container grid">
-        <div className="services__content">
-          <div>
-            <i className="uil uil-web-grid services__icon"></i>
-            <h3 className="services__title">
-              Full-Stack <br /> Development
-            </h3>
-          </div>
-
-          <span className="services__button" onClick={() => toggleTab(1)}>
-            View More
-            <i className="uil uil-arrow-right services__button-icon"></i>
-          </span>
-
-          <div
-            className={
-              toggleState === 1
-                ? "services__modal active-modal"
-                : "services__modal"
-            }
-          >
-            <div className="services__modal-content">
-              <i
-                onClick={() => toggleTab(0)}
-                className="uil uil-times services__modal-close"
-              ></i>
-
-              <h3 className="services__modal-title">Full-Stack Development</h3>
-              <p className="services__modal-description">
-                Building complete web applications with modern frameworks and technologies.
-              </p>
-
-              <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    React-based frontend development with responsive UI/UX.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">RESTful API development with FastAPI and Node.js.</p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Database design and management with MySQL, PostgreSQL, and SQLite.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    User authentication and secure data handling.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Real-time data synchronization and state management.
-                  </p>
-                </li>
-              </ul>
+        {servicesData.map((service) => (
+          <div key={service.id} className="services__content">
+            <div>
+              <i className={`${service.icon} services__icon`}></i>
+              <h3 className="services__title">{service.title.split(' ').slice(0, 2).join(' ')}<br />{service.title.split(' ').slice(2).join(' ')}</h3>
             </div>
+            <span className="services__button" onClick={() => openModal(service.id)}>
+              View More
+              <i className="uil uil-arrow-right services__button-icon"></i>
+            </span>
           </div>
-        </div>
-
-        <div className="services__content">
-          <div>
-            <i className="uil uil-brain services__icon"></i>
-            <h3 className="services__title">
-              AI Integration <br /> & Automation
-            </h3>
-          </div>
-
-          <span onClick={() => toggleTab(2)} className="services__button">
-            View More
-            <i className="uil uil-arrow-right services__button-icon"></i>
-          </span>
-
-          <div
-            className={
-              toggleState === 2
-                ? "services__modal active-modal"
-                : "services__modal"
-            }
-          >
-            <div className="services__modal-content">
-              <i
-                onClick={() => toggleTab(0)}
-                className="uil uil-times services__modal-close"
-              ></i>
-
-              <h3 className="services__modal-title">AI Integration & Automation</h3>
-              <p className="services__modal-description">
-                Leveraging AI and cloud services to build intelligent, automated solutions.
-              </p>
-
-              <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Azure OpenAI integration for content generation.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">Speech recognition and voice input validation.</p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Automated workflows and pipeline development.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Azure Cosmos DB for scalable data management.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Algorithm implementation for recommendation systems.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="services__content">
-          <div>
-            <i className="uil uil-server-network services__icon"></i>
-            <h3 className="services__title">
-              Backend <br /> Architecture
-            </h3>
-          </div>
-
-          <span onClick={() => toggleTab(3)} className="services__button">
-            View More
-            <i className="uil uil-arrow-right services__button-icon"></i>
-          </span>
-
-          <div
-            className={
-              toggleState === 3
-                ? "services__modal active-modal"
-                : "services__modal"
-            }
-          >
-            <div className="services__modal-content">
-              <i
-                onClick={() => toggleTab(0)}
-                className="uil uil-times services__modal-close"
-              ></i>
-
-              <h3 className="services__modal-title">Backend Architecture</h3>
-              <p className="services__modal-description">
-                Designing and implementing robust backend systems with scalable architecture.
-              </p>
-
-              <ul className="services__modal-services grid">
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    RESTful API design and implementation.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">Content management systems with hierarchical structures.</p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Enterprise authentication and authorization.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Data validation and security best practices.
-                  </p>
-                </li>
-
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                    Performance optimization and database indexing.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+
+      {/* Modal as separate entity */}
+      {activeModal && (
+        <div className="services__modal active-modal" onClick={closeModal}>
+          <div className="services__modal-content" onClick={(e) => e.stopPropagation()}>
+            <i className="uil uil-times services__modal-close" onClick={closeModal}></i>
+            {currentService && (
+              <>
+                <h3 className="services__modal-title">{currentService.title}</h3>
+                <p className="services__modal-description">{currentService.description}</p>
+                <ul className="services__modal-services grid">
+                  {currentService.items.map((item, index) => (
+                    <li key={index} className="services__modal-service">
+                      <i className="uil uil-check-circle services__modal-icon"></i>
+                      <p className="services__modal-info">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
