@@ -1,0 +1,228 @@
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.nav {
+    height: calc(var(--header-height) + 1.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav__logo {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-right: auto;
+    margin-left: -15rem;
+}
+
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__menu {
+    margin: 0 auto;
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__menu {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav__link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--title-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav__link:hover::before {
+    width: 80%;
+}
+
+.nav__link:hover {
+    color: var(--title-color-dark);
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+[data-theme='dark'] .nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav__link:hover .nav__icon {
+    transform: scale(1.2);
+    color: var(--title-color-dark);
+}
+
+.nav__icon {
+    transition: all 0.3s ease;
+}
+
+.nav__icon,
+.nav__close,
+.nav__toggle {
+    display: none;
+}
+
+/* Active link */
+.active-link {
+    color: var(--title-color-dark);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.active-link::before {
+    width: 80%;
+}
+
+[data-theme='dark'] .active-link {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Change background header */
+.scroll-header {
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] .scroll-header {
+    box-shadow: 0 -1px 4px rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 15, 15, 0.95);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .header {
+        top: initial;
+        bottom: 0;
+    }
+
+    .nav {
+        height: var(--header-height);
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+    }
+
+    .nav__logo {
+        position: static;
+    }
+
+    .nav__right {
+        position: static;
+    }
+
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+        display: block;
+    }
+
+    /* Show Menu */
+    .show-menu {
+        bottom: 0;
+    }
+
+    .nav__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .nav__icon {
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .nav__close {
+        position: absolute;
+        right: 1.3rem;
+        bottom: .5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--title-color);
+    }
+
+    .nav__close:hover {
+        color: var(--title-color-dark);
+    }
+
+    .nav__toggle {
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .nav__icon,
+    .nav__close,
+    .nav__toggle {
+        display: block;
+    }
+
+    .theme-toggle {
+        display: flex;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .nav__menu {
+        padding: 2rem 0.25rem 4rem;
+    }
+
+    .nav__list {
+        column-gap: 0;
+    }
+}
