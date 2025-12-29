@@ -143,7 +143,7 @@ const Header = () => {
           ></i>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: 'auto', marginRight: '-15rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: 'auto', marginRight: '-10rem' }}>
           <ThemeToggle />
           <div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
             <i className='uil uil-apps'></i>
