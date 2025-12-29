@@ -18,15 +18,15 @@
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
 
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --big-font-size: 3.5rem;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-  --tiny-font-size: 0.625rem;
+  /*.5rem = 8px | 1rem = 15px ...*/
+  --big-font-size: 3.2rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.35rem;
+  --h3-font-size: 1.15rem;
+  --normal-font-size: 0.95rem;
+  --small-font-size: 0.83rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.6rem;
 
   /*========== Font weight ==========*/
   --font-normal: 400;
@@ -34,15 +34,15 @@
   --font-semi-bold: 600;
 
   /*========== Margenes Bottom ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+  /*.5rem = 8px | 1rem = 15px ...*/
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
+  --mb-1: 0.9rem;
+  --mb-1-5: 1.35rem;
+  --mb-2: 1.8rem;
+  --mb-2-5: 2.25rem;
+  --mb-3: 2.7rem;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -62,13 +62,13 @@
 /* Responsive typography */
 @media screen and (max-width: 992px) {
   :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
+    --big-font-size: 2.5rem;
+    --h1-font-size: 1.35rem;
+    --h2-font-size: 1.15rem;
+    --h3-font-size: 0.9rem;
+    --normal-font-size: 0.9rem;
+    --small-font-size: 0.78rem;
+    --smaller-font-size: 0.7rem;
   }
 }
 
@@ -81,7 +81,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body,
@@ -125,7 +125,7 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 6rem 0 2rem;
+  padding: 5rem 0 1.8rem;
 }
 
 .section__title {
@@ -136,7 +136,7 @@ img {
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .section__title,
@@ -155,7 +155,7 @@ img {
 
 .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.3rem;
 }
 
 /*=============== BUTTONS ===============*/
@@ -163,8 +163,8 @@ img {
   display: inline-block;
   background-color: var(--title-color);
   color: var(--container-color);
-  padding: 1.25rem 2rem;
-  border-radius: 1rem;
+  padding: 1.1rem 1.8rem;
+  border-radius: 0.9rem;
   font-weight: var(--font-medium);
   transition: all 0.3s ease;
   position: relative;
@@ -237,7 +237,7 @@ img {
   }
 
   .section {
-    padding: 2rem 0 4rem;
+    padding: 1.8rem 0 3.5rem;
   }
 
   .section__subtitle {
