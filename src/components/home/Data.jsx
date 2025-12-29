@@ -57,7 +57,7 @@ const Data = () => {
       </h1>
       <h3 className='home__subtitle'>Software Developer</h3>
       <p className='home__description'>
-        Hey! I'm Faaz, a Computer Science student at McMaster University. I love turning ideas into code and building applications that people actually use. Currently, I'm working as a Software Developer Intern where I get to work with AI, build APIs, and create full-stack solutions.
+        Passionate about creating innovative solutions and bringing ideas to life through code. Always learning, always building, always pushing boundaries.
       </p>
 
       <a href='#contact' className='button button--flex'>
