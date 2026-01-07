@@ -100,18 +100,35 @@
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .qualification__container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .qualification__tabs {
+        justify-content: center;
     }
   }
   
   @media screen and (max-width: 576px) {
+    .qualification__container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
     .qualification__sections {
         grid-template-columns: initial;
+        justify-items: center;
     }
 
     .qualification__button {
         margin: 0 var(--mb-0-75);
+    }
+
+    .qualification__tabs {
+        flex-wrap: wrap;
+        justify-content: center;
     }
   }
   

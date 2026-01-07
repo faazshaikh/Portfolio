@@ -151,24 +151,32 @@
     .contact__container {
         grid-template-columns: 1fr;
         row-gap: 3rem;
+        justify-items: center;
     }
 
     .contact__info {
         justify-content: center;
+        justify-items: center;
+        width: 100%;
     }
 
     .contact__form {
         margin: 0 auto;
+        width: 100%;
+        max-width: 360px;
     }
   }
   
   @media screen and (max-width: 576px) {
     .contact__info {
         grid-template-columns: 1fr;
+        justify-items: center;
+        width: 100%;
     }
 
     .contact__form {
         width: 100%;
+        max-width: 100%;
     }
   }
   

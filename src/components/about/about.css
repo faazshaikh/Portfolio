@@ -111,18 +111,41 @@
   
   /* For medium devices */
   @media screen and (max-width: 768px) {
+    .about__container {
+        justify-items: center;
+    }
+
+    .about__img {
+        justify-self: center;
+    }
+
     .about__description {
         padding: 0 1rem;
+        text-align: center;
+    }
+
+    .about__data {
+        text-align: center;
     }
   }
 
   @media screen and (max-width: 576px) {
+    .about__container {
+        justify-items: center;
+    }
+
     .about__info {
         grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
     }
 
     .about__description {
         padding: 0;
+        text-align: center;
+    }
+
+    .about__data {
+        text-align: center;
     }
   }
   
@@ -130,5 +153,10 @@
   @media screen and (max-width: 350px) {
     .about__info {
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .about__description {
+        text-align: center;
     }
   }

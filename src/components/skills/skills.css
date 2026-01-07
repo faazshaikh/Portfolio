@@ -90,17 +90,33 @@
   @media screen and (max-width: 576px) {
     .skills__container {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .skills__content {
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .skills__box {
+        justify-content: center;
     }
   }
   
   /* For small devices */
   @media screen and (max-width: 350px) {
+    .skills__container {
+        justify-items: center;
+    }
+
+    .skills__content {
+        padding: 1.25rem;
+    }
+
     .skills__box {
         column-gap: 1.25rem;
+        justify-content: center;
     }
 
     .skills__name {

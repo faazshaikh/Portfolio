@@ -33,8 +33,34 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  /*=============== Close Menu on Outside Click ===============*/
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menu = document.querySelector('.nav__menu');
+      const toggle = document.querySelector('.nav__toggle');
+      
+      if (Toggle && menu && !menu.contains(event.target) && !toggle?.contains(event.target)) {
+        showMenu(false);
+      }
+    };
+
+    if (Toggle) {
+      document.addEventListener('mousedown', handleClickOutside);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = '';
+    };
+  }, [Toggle]);
+
   return (
     <header className='header'>
+      {Toggle && <div className='nav__overlay' onClick={() => showMenu(false)}></div>}
       <nav className='nav container'>
         <a href='/' className='nav__logo'>
           Faaz
@@ -45,7 +71,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#home'
-                onClick={() => setActiveNav('#home')}
+                onClick={() => {
+                  setActiveNav('#home');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
                 }
@@ -57,7 +86,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#about'
-                onClick={() => setActiveNav('#about')}
+                onClick={() => {
+                  setActiveNav('#about');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
                 }
@@ -69,7 +101,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#skills'
-                onClick={() => setActiveNav('#skills')}
+                onClick={() => {
+                  setActiveNav('#skills');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#skills'
                     ? 'nav__link active-link'
@@ -83,7 +118,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#services'
-                onClick={() => setActiveNav('#services')}
+                onClick={() => {
+                  setActiveNav('#services');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#services'
                     ? 'nav__link active-link'
@@ -97,7 +135,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#qualification'
-                onClick={() => setActiveNav('#qualification')}
+                onClick={() => {
+                  setActiveNav('#qualification');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#qualification'
                     ? 'nav__link active-link'
@@ -111,7 +152,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#portfolio'
-                onClick={() => setActiveNav('#portfolio')}
+                onClick={() => {
+                  setActiveNav('#portfolio');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#portfolio'
                     ? 'nav__link active-link'
@@ -125,7 +169,10 @@ const Header = () => {
             <li className='nav__item'>
               <a
                 href='#contact'
-                onClick={() => setActiveNav('#contact')}
+                onClick={() => {
+                  setActiveNav('#contact');
+                  showMenu(false);
+                }}
                 className={
                   activeNav === '#contact'
                     ? 'nav__link active-link'
@@ -139,14 +186,14 @@ const Header = () => {
 
           <i
             className='uil uil-times nav__close'
-            onClick={() => showMenu(!Toggle)}
+            onClick={() => showMenu(false)}
           ></i>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: 'auto', marginRight: '-10rem' }}>
+        <div className='nav__right'>
           <ThemeToggle />
           <div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
-            <i className='uil uil-apps'></i>
+            <i className={Toggle ? 'uil uil-times' : 'uil uil-bars'}></i>
           </div>
         </div>
       </nav>

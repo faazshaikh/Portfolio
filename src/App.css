@@ -250,6 +250,8 @@ img {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section {
@@ -258,6 +260,11 @@ img {
 
   .section__subtitle {
     margin-bottom: var(--mb-2-5);
+  }
+
+  .section__title,
+  .section__subtitle {
+    text-align: center;
   }
 
   .grid {
@@ -302,3 +309,4 @@ img {
     gap: 0.8rem;
   }
 }
+
