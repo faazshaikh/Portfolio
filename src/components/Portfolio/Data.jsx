@@ -9,10 +9,22 @@ import NewMoviePic from "../../assets/newmoviepic.jpg";
 import UKResHashIndex from "../../assets/ukreshashindex.jpg";
 import NewMatrixPic from "../../assets/newwwmatrixpicnew.jpg";
 import RockPaperScissorsPic from "../../assets/rockpapersispic.jpg";
+import FrontlinePic from "../../assets/imageforfrontline.png";
 
 export const projectsData = [
   {
     id: 1,
+    image: FrontlinePic,
+    title: "Frontline - DeltaHacks 12",
+    category: "web",
+    description: "A touchless triage platform that transforms 10-second camera clips into instant biometric analysis and visual injury detection. Combines Presage biometric sensing with Gemini Vision AI to generate ER-ready incident reports, real-time vitals monitoring, and an ElevenLabs-powered voice operator for step-by-step first aid guidance. Built as a full-stack emergency response system that reduces diagnosis and handoff time by 10%.",
+    technologies: ["React", "C++", "Node.js", "Gemini API", "ElevenLabs", "Presage"],
+    github: "https://github.com/faazshaikh/deltahacks-12",
+    devpost: "https://devpost.com/software/frontline-noyxp0?ref_content=my-projects-tab&ref_feature=my_projects",
+    hackathonWinner: true,
+  },
+  {
+    id: 2,
     image: QuranMemorizationPic,
     title: "Quran Memorization App",
     category: "web",
@@ -21,7 +33,7 @@ export const projectsData = [
     github: "https://github.com/faazshaikh/Quran-Memorization-App",
   },
   {
-    id: 2,
+    id: 3,
     image: BookMatePhoto,
     title: "BookMate",
     category: "web",
@@ -30,7 +42,7 @@ export const projectsData = [
     github: "https://github.com/zshan-dev/bangyourhead",
   },
   {
-    id: 3,
+    id: 4,
     image: NewMoviePic,
     title: "Movie Recommendation System",
     category: "app",
@@ -39,7 +51,7 @@ export const projectsData = [
     github: "https://github.com/faazshaikh/movie-recommendation-system",
   },
   {
-    id: 4,
+    id: 5,
     image: UKResHashIndex,
     title: "UK Residential Property Sales Indexing",
     category: "app",
@@ -48,7 +60,7 @@ export const projectsData = [
     github: "https://github.com/faazshaikh/Indexing-UK-Residential-Property-Sales-With-Hash-Tables",
   },
   {
-    id: 5,
+    id: 6,
     image: RockPaperScissorsPic,
     title: "Rock Paper Scissors",
     category: "web",
@@ -57,7 +69,7 @@ export const projectsData = [
     github: "https://github.com/faazshaikh/rock-paper-scissors",
   },
   {
-    id: 6,
+    id: 7,
     image: NewMatrixPic,
     title: "Matrix Solver",
     category: "app",
