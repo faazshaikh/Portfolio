@@ -180,6 +180,7 @@
     .services__container {
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
+        gap: 1.5rem;
     }
 
     .services__content {
@@ -193,6 +194,11 @@
         font-size: 1.5rem;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 1rem;
+    }
+
+    .services__title {
+        margin-bottom: 1rem;
     }
   }
   
@@ -200,11 +206,21 @@
     .services__container {
         grid-template-columns: 1fr;
         justify-items: center;
+        gap: 2rem;
     }
 
     .services__content {
         max-width: 100%;
         text-align: center;
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .services__icon {
+        margin-bottom: 1.25rem;
+    }
+
+    .services__title {
+        margin-bottom: 1rem;
     }
 
     .services__modal {

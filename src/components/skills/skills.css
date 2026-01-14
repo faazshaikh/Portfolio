@@ -91,16 +91,26 @@
     .skills__container {
         grid-template-columns: 1fr;
         justify-items: center;
+        gap: 2rem;
     }
 
     .skills__content {
-        padding: 1.5rem;
+        padding: 2rem;
         width: 100%;
         max-width: 100%;
     }
 
+    .skills__title {
+        margin-bottom: 1.5rem;
+    }
+
     .skills__box {
         justify-content: center;
+        gap: 2rem;
+    }
+
+    .skills__group {
+        gap: 1.25rem;
     }
   }
   
