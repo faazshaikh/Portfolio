@@ -17,7 +17,7 @@
     padding-bottom: 0.35rem;
     border-bottom: 2px solid transparent;
     cursor: pointer;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color 0.5s ease, border-color 0.5s ease;
 }
 
 .qualification__button:hover {
@@ -41,6 +41,12 @@
 
 .qualification__content-active {
     display: block;
+    animation: qualification-content-in 0.5s ease both;
+}
+
+@keyframes qualification-content-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .qualification__grid {
@@ -65,11 +71,11 @@
     border-radius: 1rem;
     padding: 1.75rem 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: qualification-fade 0.5s ease both;
+    animation: qualification-fade 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
 }
 
 .qualification__card:nth-child(2) {
-    animation-delay: 0.1s;
+    animation-delay: 0.22s;
 }
 
 [data-theme='dark'] .qualification__card {
@@ -171,7 +177,7 @@
 @keyframes qualification-fade {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-14px);
     }
     to {
         opacity: 1;
