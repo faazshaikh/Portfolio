@@ -31,7 +31,7 @@ const CvPage = () => {
             className='button button--flex cv__download'
           >
             Download PDF
-            <i className='uil uil-download-alt'></i>
+            <i className='uil uil-download-alt cv__download-icon'></i>
           </a>
         </div>
       </header>
