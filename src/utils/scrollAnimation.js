@@ -9,7 +9,7 @@ export const initScrollAnimations = () => {
   
   // Target all boxes and cards that should animate
   const animatedElements = document.querySelectorAll(
-    '.skills__content, .services__content, .work__card, .about__box, .about__img, .qualification__data, .contact__card'
+    '.work__card, .about__box, .about__img, .contact__card'
   );
   
   const observerOptions = {

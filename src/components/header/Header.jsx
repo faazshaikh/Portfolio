@@ -67,6 +67,18 @@ const Header = () => {
         </a>
 
         <div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
+          <div className='nav__menu-top'>
+            <span className='nav__menu-title'>Faaz</span>
+            <button
+              type='button'
+              className='nav__close'
+              aria-label='Close menu'
+              onClick={() => showMenu(false)}
+            >
+              <i className='uil uil-times'></i>
+            </button>
+          </div>
+
           <ul className='nav__list grid'>
             <li className='nav__item'>
               <a
@@ -95,40 +107,6 @@ const Header = () => {
                 }
               >
                 <i className='uil uil-user nav__icon'></i> About
-              </a>
-            </li>
-
-            <li className='nav__item'>
-              <a
-                href='#skills'
-                onClick={() => {
-                  setActiveNav('#skills');
-                  showMenu(false);
-                }}
-                className={
-                  activeNav === '#skills'
-                    ? 'nav__link active-link'
-                    : 'nav__link'
-                }
-              >
-                <i className='uil uil-file-alt nav__icon'></i> Skills
-              </a>
-            </li>
-
-            <li className='nav__item'>
-              <a
-                href='#services'
-                onClick={() => {
-                  setActiveNav('#services');
-                  showMenu(false);
-                }}
-                className={
-                  activeNav === '#services'
-                    ? 'nav__link active-link'
-                    : 'nav__link'
-                }
-              >
-                <i className='uil uil-briefcase-alt nav__icon'></i> Services
               </a>
             </li>
 
@@ -184,10 +162,6 @@ const Header = () => {
             </li>
           </ul>
 
-          <i
-            className='uil uil-times nav__close'
-            onClick={() => showMenu(false)}
-          ></i>
         </div>
 
         <div className='nav__right'>

@@ -10,8 +10,20 @@ import UKResHashIndex from "../../assets/ukreshashindex.jpg";
 import NewMatrixPic from "../../assets/newwwmatrixpicnew.jpg";
 import RockPaperScissorsPic from "../../assets/rockpapersispic.jpg";
 import FrontlinePic from "../../assets/imageforfrontline.png";
+import AgentArenaPic from "../../assets/agentarena.jpg";
 
 export const projectsData = [
+  {
+    id: 8,
+    image: AgentArenaPic,
+    title: "Agent Arena - GDG Mac-a-Thon",
+    category: "web",
+    description: "Winning submission for the Google Developer Group McMaster Mac-a-Thon. An adversarial multi-agent testing platform that stress-tests LLMs inside Minecraft before they ship. Target models face uncooperative, confusing, and resource-hoarding agents while a live dashboard logs every action, chat message, and decision. Scores cooperation, task completion, and communication quality across 400+ models, with Discord voice powered by ElevenLabs.",
+    technologies: ["TypeScript", "React", "Bun", "Elysia", "Mineflayer", "OpenRouter"],
+    github: "https://github.com/faazshaikh/AgentsArena",
+    demo: "https://youtu.be/-3Rs3XYj0t8",
+    hackathonWinner: true,
+  },
   {
     id: 1,
     image: FrontlinePic,

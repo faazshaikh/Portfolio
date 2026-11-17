@@ -57,7 +57,7 @@ const Data = () => {
       </h1>
       <h3 className='home__subtitle'>Software Developer</h3>
       <p className='home__description'>
-        Passionate about creating innovative solutions and bringing ideas to life through code. Always learning, always building, always pushing boundaries.
+        CS student at McMaster. I build full-stack apps and data tools, and I've won a couple of hackathons doing it.
       </p>
 
       <a href='#contact' className='button button--flex'>

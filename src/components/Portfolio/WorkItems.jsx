@@ -35,6 +35,12 @@ const WorkItems = ({ item }) => {
             <i className="bx bx-link-external work__button-icon"></i>
           </a>
         )}
+        {item.demo && (
+          <a href={item.demo} className="work__button" target="_blank" rel="noopener noreferrer">
+            Demo
+            <i className="bx bxl-youtube work__button-icon"></i>
+          </a>
+        )}
       </div>
     </div>
   );

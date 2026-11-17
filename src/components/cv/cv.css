@@ -1,0 +1,122 @@
+.cv {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--body-color);
+}
+
+.cv__header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  background-color: var(--container-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .cv__header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cv__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: transform 0.3s ease;
+}
+
+.cv__back:hover {
+  transform: translateX(-3px);
+}
+
+.cv__title {
+  font-size: var(--h2-font-size);
+}
+
+.cv__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.9rem;
+}
+
+.cv__download {
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: var(--small-font-size);
+}
+
+.cv__viewer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 1rem 1.5rem;
+}
+
+/* Fill the space under the header. The browser's own PDF viewer (with its
+   toolbar for zoom / print / download) stays visible, and #view=Fit makes the
+   whole page fit inside it. */
+.cv__frame {
+  /* Width follows the page shape (US Letter, 8.5 x 11) for the available height,
+     minus the viewer's toolbar, so there are only thin bars on the sides. */
+  width: min(100%, calc((100vh - 6.5rem - 56px) * 8.5 / 11 + 24px));
+  height: calc(100vh - 6.5rem);
+  min-height: 520px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+  background-color: #fff;
+}
+
+[data-theme='dark'] .cv__frame {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cv__fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  color: #333;
+}
+
+@media screen and (max-width: 576px) {
+  .cv__header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'back actions'
+      'title title';
+    padding: 0.75rem 1rem;
+  }
+
+  .cv__back {
+    grid-area: back;
+  }
+
+  .cv__actions {
+    grid-area: actions;
+  }
+
+  .cv__title {
+    grid-area: title;
+    text-align: center;
+  }
+
+  .cv__download {
+    padding: 0.6rem 0.9rem;
+  }
+
+  .cv__viewer {
+    padding: 0.75rem 0.5rem 1rem;
+  }
+
+  .cv__frame {
+    width: 100%;
+    height: calc(100vh - 9rem);
+    min-height: 420px;
+  }
+}

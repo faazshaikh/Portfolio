@@ -319,6 +319,66 @@
   font-size: var(--small-font-size);
 }
 
+/* Touch-only prompt: hidden unless the device is touch-first */
+.home__scroll-finger,
+.home__scroll-name--touch,
+.home__scroll-arrow--touch {
+  display: none;
+}
+
+.home__scroll-finger {
+  width: 32px;
+  height: 32px;
+  animation: swipe-up 2s ease-in-out infinite;
+}
+
+/* Small, gentle motion so the finger and arrow don't travel far */
+@keyframes swipe-up {
+  0% {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-small {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+}
+
+.home__scroll-button .home__scroll-arrow--touch {
+  animation: bounce-small 2s ease infinite;
+}
+
+/* Phone / iPad sized screens, or any touch-first device: swap mouse for finger */
+@media screen and (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .home__scroll-mouse,
+  .home__scroll-name--mouse,
+  .home__scroll-arrow--mouse {
+    display: none;
+  }
+
+  .home__scroll-finger,
+  .home__scroll-name--touch,
+  .home__scroll-arrow--touch {
+    display: inline-block;
+  }
+}
+
 .home__scroll-arrow {
   font-size: 1.5rem;
   color: var(--title-color);

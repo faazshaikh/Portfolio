@@ -1,7 +1,6 @@
 import React from 'react';
 import './about.css';
 import AboutImg from '../../assets/newaboutme.png';
-import CV from '../../assets/Faaz_Shaikh_Resume.pdf';
 import Info from './Info';
 
 const About = () => {
@@ -17,10 +16,10 @@ const About = () => {
           <Info />
 
           <p className='about__description'>
-            Hey! I'm Faaz, a Computer Science student at McMaster University. I love turning ideas into code and building applications that people actually use. Currently, I'm working as a Software Developer Intern where I get to work with AI, build APIs, and create full-stack solutions. When I'm not in class or coding, I'm usually working on personal projects or exploring new technologies. I'm always excited to learn something new and take on interesting challenges!
+            I'm a Computer Science student at McMaster University and a Data Engineering Co-op at Sanofi, where I contribute to data migration and backend work in Python and Snowflake. I've won two hackathons, DeltaHacks and the GDG McMaster Mac-a-Thon, and outside of class I love working on side projects!
           </p>
 
-          <a download='Faaz-Resume.pdf' href={CV} className='button button--flex'>
+          <a href='/cv' className='button button--flex'>
             Download CV
             <svg
               className='button__icon'
