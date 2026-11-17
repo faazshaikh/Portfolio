@@ -126,4 +126,9 @@
   .cv__download .cv__download-icon {
     display: none;
   }
+
+  /* Download button sits to the left of the theme toggle */
+  .cv__download {
+    order: -1;
+  }
 }
